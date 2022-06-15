@@ -20,6 +20,8 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User login(User vo) {
         User userExample = new User();
+        userExample.setUsername(vo.getUsername());
+        userExample.setPassword(vo.getPassword());
         List<User> userList = userMapper.querUser(userExample);
         if (userList == null || userList.size() == 0) {
             return null;
