@@ -3,12 +3,12 @@
 
  Source Server         : 456
  Source Server Type    : MySQL
- Source Server Version : 80028
+ Source Server Version :
  Source Host           : localhost:3306
  Source Schema         : test001
 
  Target Server Type    : MySQL
- Target Server Version : 80028
+ Target Server Version :
  File Encoding         : 65001
 
  Date: 15/06/2022 17:12:26
