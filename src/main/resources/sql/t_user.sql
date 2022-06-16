@@ -1,9 +1,6 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 456
- Source Server Type    : MySQL
- Source Server Version :
  Source Host           : localhost:3306
  Source Schema         : test001
 
