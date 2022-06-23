@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.ljn.dao.BookMapper">
+    <select id="querBook" resultType="com.example.ljn.entity.Book">
+        select id,title,publish,`authors`,createTime,updateTime from book WHERE id = 5
+    </select>
+</mapper>
+
