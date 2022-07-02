@@ -15,4 +15,8 @@ public interface BookMapper extends BaseMapper<Book> {
     List<BookVO> querBook(BookVO vo);
 
     int insertBook(BookVO vo);
+
+    int updatebook(BookVO vo);
+
+    int deletebook(BookVO vo);
 }

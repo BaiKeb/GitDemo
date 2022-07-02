@@ -40,6 +40,20 @@ public class BookController {
         return bookService.insertBook(vo);
     }
 
+    @RequestMapping(value = "/updatebook", method = RequestMethod.POST)
+
+    public int updatebook(@RequestBody BookVO vo) {
+        System.out.println("传入"+vo);
+        return bookService.updatebook(vo);
+    }
+
+    @RequestMapping(value = "/deletebook", method = RequestMethod.POST)
+
+    public int deletebook(@RequestBody BookVO vo) {
+        System.out.println("传入"+vo);
+        return bookService.deletebook(vo);
+    }
+
     @DeleteMapping("/deleteById/{id}")
     public int deleteById(@PathVariable("id") Long id) {
         Integer result = 0;

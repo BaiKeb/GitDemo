@@ -3,14 +3,34 @@
 
 <mapper namespace="com.example.ljn.dao.BookMapper">
     <select id="querBook" resultType="com.example.ljn.vo.BookVO">
-        select id,title,publish,`authors`,createTime,updateTime from book WHERE 1 = 1
+        select id, title, publish, `authors`, createTime, updateTime
+        from book
+        WHERE 1 = 1
     </select>
 
     <insert id="insertBook">
-        INSERT INTO book ( id,title,publish,`authors`,createTime,updateTime )
-        VALUES
-            (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{publish,jdbcType=VARCHAR},
-             #{authors,jdbcType=VARCHAR},#{createTime,jdbcType=VARCHAR},#{updateTime,jdbcType=VARCHAR})
+        INSERT INTO book (id, title, publish, `authors`, createTime, updateTime)
+        VALUES (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{publish,jdbcType=VARCHAR},
+                #{authors,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR})
     </insert>
+
+    <update id="updatebook">
+        update book
+        set title      = #{title},
+            publish    = #{publish},
+            authors    = #{authors},
+            createTime = #{createTime},
+            updateTime = #{updateTime}
+        where id = #{id}
+    </update>
+
+    <delete id="deletebook">
+        DELETE
+        FROM
+            book
+        WHERE
+            id = #{id}
+    </delete>
+
 </mapper>
 

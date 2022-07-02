@@ -17,6 +17,10 @@ public interface BookService {
 
     int insertBook(BookVO vo);
 
+    int updatebook(BookVO vo);
+
+    int deletebook (BookVO vo);
+
 
 //    List<Book> querBook(Book book);
 }

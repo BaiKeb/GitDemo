@@ -59,4 +59,15 @@ public class BookServiceImpl implements BookService {
         return bookMapper.insertBook(vo);
     }
 
+    @Override
+    public int updatebook(BookVO vo) {
+        vo.setUpdateTime(new Date());
+        return bookMapper.updatebook(vo);
+    }
+
+    @Override
+    public int deletebook(BookVO vo) {
+        return bookMapper.deletebook(vo);
+    }
+
 }
