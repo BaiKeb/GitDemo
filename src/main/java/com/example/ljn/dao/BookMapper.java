@@ -2,12 +2,17 @@ package com.example.ljn.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.ljn.entity.Book;
+import com.example.ljn.vo.BookVO;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
 
 //@Repository
 @Mapper
 public interface BookMapper extends BaseMapper<Book> {
 
-    Book querBook();
+    List<BookVO> querBook(BookVO vo);
+
+    int insertBook(BookVO vo);
 }

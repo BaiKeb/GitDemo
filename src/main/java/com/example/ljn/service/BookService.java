@@ -1,8 +1,10 @@
 package com.example.ljn.service;
 
 import com.example.ljn.entity.Book;
+import com.example.ljn.vo.BookVO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BookService {
     public List<Book> findAll();
@@ -11,7 +13,10 @@ public interface BookService {
     public int deleteById(Long id);
     public int updateById(Book book);
 
-    List<Book> querBook();
+    List<BookVO> querBook(BookVO vo);
+
+    int insertBook(BookVO vo);
+
 
 //    List<Book> querBook(Book book);
 }

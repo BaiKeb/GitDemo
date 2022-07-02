@@ -3,10 +3,13 @@ package com.example.ljn.controller;
 import com.example.ljn.api.CommonResult;
 import com.example.ljn.entity.Book;
 import com.example.ljn.service.BookService;
+import com.example.ljn.vo.BookVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 //@CrossOrigin
@@ -22,17 +25,19 @@ public class BookController {
 //    }
 
     @RequestMapping(value = "/bookList", method = RequestMethod.POST)
-    public List<Book> querBook(){
-        List<Book> list = bookService.querBook();
-//        book1 = bookService.querBook();
+    public List<BookVO> querBook(BookVO vo){
+        List<BookVO> list = bookService.querBook(vo);
         System.out.println("输出"+list);
+
+
         return list;
     }
 
-    @RequestMapping("/addbook")
+    @RequestMapping(value = "/addbook", method = RequestMethod.POST)
 
-    public int addbook(@RequestBody Book book) {
-        return bookService.insert(book);
+    public int addbook(@RequestBody BookVO vo) {
+        System.out.println("传入"+vo);
+        return bookService.insertBook(vo);
     }
 
     @DeleteMapping("/deleteById/{id}")
